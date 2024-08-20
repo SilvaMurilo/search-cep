@@ -2,7 +2,7 @@ import React from "react";
 import { json, LoaderFunction, ActionFunction, redirect } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { Label } from "@/components/ui/label";
-import { AddressSchema, Address } from "@/schemas/addressSchema"; // Ajuste o caminho conforme necessário
+import { AddressSchema, Address } from "@/schemas/addressSchema";
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = new URLSearchParams(await request.text());
@@ -25,10 +25,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   if (!response.ok) {
     return json({ error: "Erro ao buscar o CEP" }, { status: 500 });
   }
-
   const addressData = await response.json();
-  
-  // Validação com zod
   const parsedAddress = AddressSchema.safeParse(addressData);
   if (!parsedAddress.success) {
     return json({ error: "Dados de CEP inválidos" }, { status: 500 });

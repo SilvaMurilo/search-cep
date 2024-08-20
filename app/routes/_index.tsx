@@ -7,11 +7,10 @@ import { Button } from "@/components/ui/button";
 export const meta = () => {
   return [
     { title: "Busca CEP" },
-    { name: "description", content: "Busca CEP!" },
+    { name: "description", content: "Busca CEP" },
   ];
 };
 
-// Função de ação para lidar com o envio do formulário
 export const action: ActionFunction = async ({ request }) => {
   const formData = new URLSearchParams(await request.text());
   const cep = formData.get("cep");
@@ -21,7 +20,6 @@ export const action: ActionFunction = async ({ request }) => {
     return json({ error: "CEP inválido" }, { status: 400 });
   }
 
-  // Redireciona para a rota `/cep/${cep}` para buscar os dados do CEP
   return redirect(`/cep/${cep}`);
 };
 
@@ -62,7 +60,7 @@ export default function Index() {
           <Button
             className="text-base sm:text-lg md:text-xl mt-4 py-2 px-4 rounded hover:bg-slate-600"
             type="submit"
-            disabled={cep.length !== 9} // Desabilita o botão até o CEP estar completo
+            disabled={cep.length !== 9}
           >
             Buscar
           </Button>
