@@ -1,79 +1,98 @@
-# Welcome to Remix + Vite + shadcn/ui!
+Claro, aqui está um README atualizado para o seu projeto, incluindo informações sobre o que você implementou:
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
+---
 
-## Getting Started
+# Projeto Remix + Vite + shadcn/ui + Busca de CEP
 
-Node Server:
+Este projeto é uma aplicação desenvolvida com Remix, Vite e shadcn/ui, que permite buscar informações sobre um CEP (Código de Endereçamento Postal) brasileiro e exibi-las em uma página detalhada.
+
+## Funcionalidades
+
+- **Busca de CEP**: Envie um CEP através de um formulário e seja redirecionado para uma página com os detalhes do endereço.
+- **Exibição dos Detalhes**: A página de detalhes exibe informações completas sobre o CEP, como logradouro, bairro, localidade e mais.
+- **Validação**: Validação do CEP no backend e tratamento de erros.
+
+## Estrutura do Projeto
+
+- **`routes/cep.tsx`**: Página com formulário para buscar um CEP. Redireciona para a página de detalhes após o envio.
+- **`routes/cep.$cep.tsx`**: Página que exibe os detalhes do CEP. Utiliza dados do ViaCEP API e valida os dados com Zod.
+- **`schemas/addressSchema.ts`**: Definição do esquema de validação usando Zod para os dados de endereço retornados pela API.
+
+## Começando
+
+### Clonando o Repositório
 
 ```sh
-npx create-remix@latest --template jacob-ebey/remix-shadcn
+git clone <url-do-repositorio>
+cd <nome-do-repositorio>
 ```
 
-Cloudflare Pages:
+### Instalando Dependências
 
-```shellscript
-npx create-remix@latest --template https://github.com/jacob-ebey/remix-shadcn/tree/cloudflare
+```sh
+npm install
 ```
 
-Or for a more flushed out template with a login flow and a SQLite database backed by Drizzle ORM:
+### Desenvolvimento
 
-Node Server:
-
-```shellscript
-npx create-remix@latest --template https://github.com/jacob-ebey/remix-shadcn/tree/drizzle
-```
-
-Cloudflare Pages:
-
-```shellscript
-npx create-remix@latest --template https://github.com/jacob-ebey/remix-shadcn/tree/drizzle-cloudflare
-```
-
-## Built in theme switcher
-
-![image](https://github.com/jacob-ebey/remix-shadcn/assets/12063586/c6ed812c-764f-46b7-af30-26284f55535c)
-
-![image](https://github.com/jacob-ebey/remix-shadcn/assets/12063586/4e378230-3b4b-4b78-8af4-096b30aacf79)
-
-## Development
-
-Run the Vite dev server:
+Execute o servidor de desenvolvimento com:
 
 ```sh
 npm run dev
 ```
 
-## Deployment
+Visite `http://localhost:3000` para visualizar a aplicação em desenvolvimento.
 
-First, build your app for production:
+### Testar Localmente
+
+Para testar a aplicação localmente, você pode enviar um CEP no formulário da página inicial e verificar se a página de detalhes exibe as informações corretamente.
+
+### Deploy
+
+Primeiro, construa sua aplicação para produção:
 
 ```sh
 npm run build
 ```
 
-Setup your environment:
+Configure seu ambiente para produção:
 
 ```sh
 NODE_ENV='production'
 ```
 
-Then run the app in production mode:
+Em seguida, execute a aplicação em modo de produção:
 
 ```sh
 npm start
 ```
 
-Now you'll need to pick a host to deploy it to.
+Você precisará escolher um serviço de hospedagem para fazer o deploy da sua aplicação. O projeto está pronto para ser hospedado em serviços de Node.js como Heroku, Vercel ou DigitalOcean.
 
-### DIY
+### DIY (Faça você mesmo)
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+Se você está familiarizado com o deploy de aplicações Node, o servidor Remix integrado está pronto para produção. 
 
-Make sure to deploy the output of `npm run build` and the server
+Certifique-se de implantar a saída de `npm run build` e o servidor:
 
 - `server.js`
 - `build/server`
 - `build/client`
 
-Take a look at the provided Dockerfile for further details on how to configure a production environment.
+Consulte o Dockerfile fornecido para mais detalhes sobre como configurar um ambiente de produção.
+
+## Recursos Adicionais
+
+- [Documentação Remix](https://remix.run/docs)
+- [Documentação Vite](https://vitejs.dev/)
+- [shadcn/ui](https://shadcn.dev/)
+
+## Contribuindo
+
+Se você deseja contribuir para o projeto, por favor, faça um fork do repositório e envie um pull request com suas melhorias.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
