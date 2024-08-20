@@ -27,7 +27,7 @@ export function Header() {
 	const theme = getTheme();
 
 	return (
-		<header className="flex items-center justify-between px-4 py-2 md:py-4">
+		<header className="flex items-center justify-between px-4 py-1 md:py-2 ">
 			<div className="flex items-center space-x-4">
 				<Link className="flex items-center space-x-2" to="/">
 					{/* <HomeIcon className="h-6 w-6" /> */}

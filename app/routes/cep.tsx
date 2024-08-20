@@ -38,8 +38,8 @@ export default function CepPage() {
   const address = useLoaderData<Address>();
 
   return (
-    <main className="flex flex-col gap-10 items-center justify-center px-4 py-8 sm:px-8 md:px-12 lg:px-16">
-      <Label className="text-3xl sm:text-4xl md:text-5xl text-center">
+    <main className="flex flex-col gap-3 items-center justify-center px-4  sm:px-8 md:px-12 lg:px-16">
+      <Label className="text-2xl sm:text-3xl md:text-4xl text-center">
         Detalhes do CEP:
       </Label>
       <Link to="/" className="text-xl text-blue-500 hover:underline mb-4">
